@@ -3,18 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 class Square extends React.Component {
-    render() {
-      return (
-        <button className="square">
-          {/* TODO */}
-        </button>
-      );
-    }
+  render() {
+    return (
+      <button className="square" onClick={function(e) { console.log('Clicked ' + e.target.innerHTML); }}>
+        {this.props.value}
+      </button>
+    );
   }
-  
+}
   class Board extends React.Component {
     renderSquare(i) {
-      return <Square />;
+
+      return <Square value={i}/>;
     }
   
     render() {
